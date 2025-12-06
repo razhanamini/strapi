@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fights",
+  "info": {
+    "singularName": "fight",
+    "pluralName": "fights",
+    "displayName": "Fight"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Organization": {
+      "type": "string"
+    },
+    "FighterA": {
+      "type": "string"
+    },
+    "FighterB": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "string"
+    },
+    "FightStatus": {
+      "type": "string"
+    },
+    "Winner": {
+      "type": "string"
+    }
+  }
+}
