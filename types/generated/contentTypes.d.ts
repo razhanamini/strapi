@@ -459,6 +459,38 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiBetBet extends Struct.CollectionTypeSchema {
+  collectionName: 'bets';
+  info: {
+    displayName: 'Bet';
+    pluralName: 'bets';
+    singularName: 'bet';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    amount: Schema.Attribute.BigInteger;
+    bet_status: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    escrow_tx_hash: Schema.Attribute.String;
+    fight_id: Schema.Attribute.String;
+    fighter_id: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::bet.bet'> &
+      Schema.Attribute.Private;
+    payout_amount: Schema.Attribute.BigInteger;
+    payout_tx_hash: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user_id: Schema.Attribute.String;
+  };
+}
+
 export interface ApiFightFight extends Struct.CollectionTypeSchema {
   collectionName: 'fights';
   info: {
@@ -1093,6 +1125,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::bet.bet': ApiBetBet;
       'api::fight.fight': ApiFightFight;
       'api::fighter.fighter': ApiFighterFighter;
       'api::global.global': ApiGlobalGlobal;

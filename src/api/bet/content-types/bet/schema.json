@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bets",
+  "info": {
+    "singularName": "bet",
+    "pluralName": "bets",
+    "displayName": "Bet"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "type": "string"
+    },
+    "fighter_id": {
+      "type": "string"
+    },
+    "fight_id": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "biginteger"
+    },
+    "payout_amount": {
+      "type": "biginteger"
+    },
+    "bet_status": {
+      "type": "string"
+    },
+    "escrow_tx_hash": {
+      "type": "string"
+    },
+    "payout_tx_hash": {
+      "type": "string"
+    }
+  }
+}
